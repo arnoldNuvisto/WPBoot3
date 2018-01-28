@@ -117,7 +117,15 @@ add_action( 'widgets_init', 'WPBoot3_widgets_init' );
  * Enqueue scripts and styles.
  */
 function WPBoot3_scripts() {
+/**
+ * @TODO: 
+ * > figure out if the stylesheet order should be reversed
+ * > sort the naming convention for the WP handle
+ * > enqueue fontAwesome styles
+ */	
 	wp_enqueue_style( 'WPBoot3-style', get_stylesheet_uri() );
+
+    wp_enqueue_style( 'wpboot3-libs-style', get_template_directory_uri() . '/assets/css/wpboot3-libs-style.css', array(), false, 'all' );
 
     wp_enqueue_style( 'wpboot3-theme-style', get_template_directory_uri() . '/assets/css/wpboot3-theme-style.css', array(), false, 'all' );
 
