@@ -119,9 +119,9 @@ add_action( 'widgets_init', 'WPBoot3_widgets_init' );
 function WPBoot3_scripts() {
 /**
  * @TODO: 
- * > figure out if the stylesheet order should be reversed
  * > sort the naming convention for the WP handle
  * > enqueue fontAwesome styles
+ * > add conditional logic for potentially non-existant '...-libs.js' and '...-footer.js'
  */	
 	wp_enqueue_style( 'WPBoot3-style', get_stylesheet_uri() );
 
@@ -178,3 +178,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Load Custom Navigation Walker for Bootstrap
+ */
+require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
