@@ -5,8 +5,8 @@ Author: Arnold Wytenburg
 Author URI: https://arnoldwytenburg.com
 Description: A Bootstrap-based Wordpress theme starter template
 Version: 0.0.1
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: wpboot3
 Tags: 
 */
@@ -26,6 +26,7 @@ Tags:
 # Media
 	## Captions
 	## Galleries
+# Bootstrap fixes due to WP Core Changes
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Accessibility
@@ -261,3 +262,62 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+ 
+/*--------------------------------------------------------------
+# Bootstrap fixes due to WP Core Changes
+--------------------------------------------------------------*/
+/* 
+SOURCE: https://bootstrapwp.com/topic/editing-template-tags-php-not-working/page/5/ 
+*/
+/* Bootstrap wants to use .pager and .previous / .next classes
+   but WP has moved that pagination functionality to the core.
+   So instead of using BS directly, we applied the BS css to
+   the WP classes. This should make it so that future updates
+   to WP won&#039;t override this css.
+*/
+ 
+/* Centers links in container. Off by default */
+/*.nav-links {
+    padding-left: 0;
+    margin: 20px 0;
+    text-align: center;
+    list-style: none;
+}*/
+ 
+.nav-previous, .nav-next {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+ 
+/* Aligns links to the left and right of the container */
+.nav-previous {
+    float: left;
+}
+ 
+.nav-next {
+    float: right;
+}
+ 
+.nav-previous:focus, .nav-next:focus,
+.nav-previous:hover, .nav-next:hover {
+    background-color: #eee;
+}
+ 
+.nav-previous a:focus, .nav-next a:focus,
+.nav-previous a:hover, .nav-next a:hover {
+    text-decoration: none;
+    }
+ 
+/* Adds arrows to the left and right respectively */
+.nav-previous a::before {
+    content: &quot;\2190\00a0&quot;;
+}
+ 
+.nav-next a::after {
+    content: &quot;\00a0\2192&quot;;
+}
+ 

@@ -13,23 +13,27 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
+	<footer id="colophon" class="site-footer" role="contentinfo">
 
 		<div class="container">
 			<div class="row">
+				<div class="col-md-6 col-lg-6">
+				<?php if (has_nav_menu('footer-menu', 'bootstrapwp')) { ?>
+		            <nav role="navigation">
+		            <?php wp_nav_menu(array(
+						'container'       => '',
+						'menu_class'      => 'footer-menu',
+						'theme_location'  => 'footer-menu')
+		            ); 
+		            ?>
+		        	</nav>
+            	<?php } ?>
+				</div>
 
-				<div class="site-info">
-					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'WPBoot3' ) ); ?>"><?php
-						/* translators: %s: CMS name, i.e. WordPress. */
-						printf( esc_html__( 'Proudly powered by %s', 'WPBoot3' ), 'WordPress' );
-					?></a>
-					<span class="sep"> | </span>
-					<?php
-						/* translators: 1: Theme name, 2: Theme author. */
-						printf( esc_html__( 'Theme: %1$s by %2$s.', 'WPBoot3' ), 'WPBoot3', '<a href="https://automattic.com/">Automattic</a>' );
-					?>
-				</div><!-- .site-info -->
-				
+				<div class="col-md-6 col-lg-6">
+					<p class="alignright">&copy; <?php _e('Copyright', 'WPBoot3'); ?> <?php echo date('Y'); ?> - <a href="<?php echo home_url(); ?>/" title="<?php bloginfo('name'); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
+				</div>
+
 			</div> <!-- .row -->
 		</div> <!-- .container -->
 

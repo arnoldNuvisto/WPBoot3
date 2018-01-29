@@ -45,6 +45,8 @@ if ( ! function_exists( 'WPBoot3_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'WPBoot3' ),
+			'footer-menu' => esc_html__( 'Footer Menu', 'WPBoot3' ), // added
+			'social-media-menu' => esc_html__( 'Social Media Menu', 'WPBoot3' ), // added
 		) );
 
 		/*
