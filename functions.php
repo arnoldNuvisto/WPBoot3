@@ -185,3 +185,8 @@ if ( class_exists( 'WooCommerce' ) ) {
  * Load Custom Navigation Walker for Bootstrap
  */
 require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
+
+/**
+ * Load Custom Theme-related functions
+ */
+require get_template_directory() . '/inc/custom-theme.php';

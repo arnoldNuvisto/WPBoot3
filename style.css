@@ -26,7 +26,12 @@ Tags:
 # Media
 	## Captions
 	## Galleries
+#
+# THESE HAVE BEEN ADDED BY ME
+#
 # Bootstrap fixes due to WP Core Changes
+# Video embed fix
+# Image size fix
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Accessibility
@@ -179,6 +184,11 @@ Tags:
 	padding: 0;
 }
 
+/* Make sure images fit their containers. */
+img {
+	max-width: 100%;
+}
+
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
@@ -321,3 +331,36 @@ SOURCE: https://bootstrapwp.com/topic/editing-template-tags-php-not-working/page
     content: &quot;\00a0\2192&quot;;
 }
  
+/*--------------------------------------------------------------
+# Video embed fix
+Use <div class="video-frame"> embed code</div> in a post
+> https://pastebin.com/dhKXC93R
+--------------------------------------------------------------*/
+.video-frame {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    overflow: hidden;
+    height: 0;
+}
+.video-frame iframe,
+.video-frame object,
+.video-frame embed {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+/*--------------------------------------------------------------
+# Image size fix
+> https://pastebin.com/gwy3aJAU
+--------------------------------------------------------------*/
+img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
