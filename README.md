@@ -1,4 +1,24 @@
-WPBoot3
-===
+# WPBoot3
 
-Hi. I'm a starter theme called `WPBoot3`, based on `underscores`, and integrated Bootstrap3. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+A Bootstrap-centric starter template for Wordpress 4.+, based on underscores.
+
+## Description
+
+FYI, this is still a work in progress with a few outstanding issues.
+
+## Installation
+
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+## Frequently Asked Questions
+
+### Does this theme support any plugins?
+
+WPBoot3 includes support for Infinite Scroll in Jetpack.
+
+## Changelog
+
+= 0.0.1 - Jan 25 2018 =
+* Initial commit
