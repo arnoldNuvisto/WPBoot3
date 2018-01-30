@@ -184,11 +184,6 @@ Tags:
 	padding: 0;
 }
 
-/* Make sure images fit their containers. */
-img {
-	max-width: 100%;
-}
-
 /* Make sure embeds and iframes fit their containers. */
 embed,
 iframe,
