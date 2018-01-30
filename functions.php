@@ -132,7 +132,6 @@ function WPBoot3_scripts() {
 /**
  * @TODO: 
  * > sort the naming convention for the WP handle
- * > enqueue fontAwesome styles
  * > add conditional logic for potentially non-existant '...-libs.js' and '...-footer.js'
  */	
 	wp_enqueue_style( 'WPBoot3-style', get_stylesheet_uri() );
@@ -146,10 +145,6 @@ function WPBoot3_scripts() {
     wp_enqueue_script( 'wpboot3-header', get_template_directory_uri() . '/assets/js/wpboot3-header.js', array('jquery'), '', false );
 
     wp_enqueue_script( 'wpboot3-footer', get_template_directory_uri() . '/assets/js/wpboot3-footer.js', array('jquery'), '', true );
-
-
-
-
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -200,3 +195,8 @@ require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
  * Load Custom Theme-related functions
  */
 require get_template_directory() . '/inc/custom-theme.php';
+
+/**
+ * Load Comments Callback
+ */
+require get_template_directory() . '/inc/comments-callback.php';

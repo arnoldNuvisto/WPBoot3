@@ -21,7 +21,6 @@ Tags:
 # Widgets
 # Content
 	## Posts and pages
-	## Comments
 # Infinite scroll
 # Media
 	## Captions
@@ -144,17 +143,6 @@ Tags:
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
-}
-
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
-}
-
-.bypostauthor {
-	display: block;
 }
 
 /*--------------------------------------------------------------
@@ -289,7 +277,13 @@ SOURCE: https://bootstrapwp.com/topic/editing-template-tags-php-not-working/page
     text-align: center;
     list-style: none;
 }*/
- 
+/* since links are now floated, need to clear the floats to force height */
+.nav-links::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
 .nav-previous, .nav-next {
     display: inline-block;
     padding: 5px 14px;

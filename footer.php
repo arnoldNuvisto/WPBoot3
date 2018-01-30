@@ -31,7 +31,7 @@
 				</div>
 
 				<div class="col-md-6 col-lg-6">
-					<p class="alignright">&copy; <?php _e('Copyright', 'WPBoot3'); ?> <?php echo date('Y'); ?> - <a href="<?php echo home_url(); ?>/" title="<?php bloginfo('name'); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
+					<p class="copyright">&copy; <?php _e('Copyright', 'WPBoot3'); ?> <?php echo date('Y'); ?> - <a href="<?php echo home_url(); ?>/" title="<?php bloginfo('name'); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
 				</div>
 
 			</div> <!-- .row -->
