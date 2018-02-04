@@ -90,7 +90,7 @@ add_action( 'after_setup_theme', 'WPBoot3_setup' );
  * 
  * @NOTE: Borrowed from TwentySeventeen
  */
-function wp_bootstrap_fonts_url() {
+function WPBoot3_fonts_url() {
 	$fonts_url = '';
 
 	/**
@@ -98,8 +98,8 @@ function wp_bootstrap_fonts_url() {
 	 * supported by Source Sans Pro and PT Serif, set these to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'wp_bootstrap' );
-	$pt_serif = _x( 'on', 'PT Serif font: on or off', 'wp_bootstrap' );
+	$source_sans_pro = _x( 'on', 'Source Sans Pro font: on or off', 'WPBoot3' );
+	$pt_serif = _x( 'on', 'PT Serif font: on or off', 'WPBoot3' );
 
 	$font_families = array();
 	
@@ -136,8 +136,8 @@ function wp_bootstrap_fonts_url() {
  * @param string $relation_type  The relation type the URLs are printed.
  * @return array $urls           URLs to print for resource hints.
  */
-function wp_bootstrap_resource_hints( $urls, $relation_type ) {
-	if ( wp_style_is( 'wp-bootstrap-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+function WPBoot3_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'wpboot3-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
 		$urls[] = array(
 			'href' => 'https://fonts.gstatic.com',
 			'crossorigin',
@@ -146,7 +146,7 @@ function wp_bootstrap_resource_hints( $urls, $relation_type ) {
 
 	return $urls;
 }
-add_filter( 'wp_resource_hints', 'wp_bootstrap_resource_hints', 10, 2 );
+add_filter( 'wp_resource_hints', 'WPBoot3_resource_hints', 10, 2 );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -198,6 +198,8 @@ function WPBoot3_scripts() {
  * > add conditional logic for potentially non-existant '...-libs.js' and '...-footer.js'
  */	
 	wp_enqueue_style( 'WPBoot3-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'wpboot3-fonts' , WPBoot3_fonts_url() );
 
     wp_enqueue_style( 'wpboot3-libs-style', get_template_directory_uri() . '/assets/css/wpboot3-libs-style.css', array(), false, 'all' );
 
